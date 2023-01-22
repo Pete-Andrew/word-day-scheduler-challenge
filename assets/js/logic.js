@@ -14,7 +14,7 @@ console.log(currentTime);
 currentTime();
 
 function currentHour() { 
-var currentHour = $("#currentHour").text(time.format("h")); 
+var currentHour = $("#currentHour").text(time.format("H")); 
 console.log(currentHour);
 // $("#currentHour").hide();
 }
