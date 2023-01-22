@@ -1,19 +1,25 @@
 var weekDay = moment();
 $("#currentDay").text(weekDay.format("dddd, Do, MMMM"));
 
+var time = moment();
+
 // get current time from moment
-// function currentTime () {
-// var time = moment();
-// time = time.text(time.format("h:mm:s");
-// // $("#4a").text(time.format("h:mm:s"));
-// console.log(time);
-// }
+// Assign current time to a var, use jquery to select the id 'current time' give it text (e.g. the time)
+function currentTime () {
+var currentTime = $("#currentTime").text(time.format("hh:mm:ss"));
+// $("#currentTime").hide();
+console.log(currentTime);
+}
 
 currentTime();
 
-// currentTime(); 
+function currentHour() { 
+var currentHour = $("#currentHour").text(time.format("h")); 
+console.log(currentHour);
+// $("#currentHour").hide();
+}
 
-// make text enterable in the central sections
+currentHour(); 
 
 // The app should:
 
@@ -22,6 +28,8 @@ currentTime();
 // ** Present timeblocks for standard business hours when the user scrolls down. DONE
  
 // ** Color-code each timeblock based on past, present, and future when the timeblock is viewed. 
+// grey for past, red for present, green for future
+
 // set a variable for time = moment value. Need to set a loop that checks to compare the current time (moment value) 
 // with values on the timeblocks
  
