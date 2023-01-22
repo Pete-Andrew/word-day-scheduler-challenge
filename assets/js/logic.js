@@ -2,11 +2,14 @@ var weekDay = moment();
 $("#currentDay").text(weekDay.format("dddd, Do, MMMM"));
 
 // get current time from moment
-var time = moment();
-// $("#4a").text(time.format("h:mm:s"));
-console.log(time);
-return time;    
+// function currentTime () {
+// var time = moment();
+// time = time.text(time.format("h:mm:s");
+// // $("#4a").text(time.format("h:mm:s"));
+// console.log(time);
+// }
 
+currentTime();
 
 // currentTime(); 
 
