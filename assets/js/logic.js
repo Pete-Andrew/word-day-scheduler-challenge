@@ -8,8 +8,7 @@ $("#currentDay").text(time.format("dddd, Do, MMMM"));
 var timeNow = parseInt(time.format("H"));
 console.log("The time is after: " + timeNow);
 
-var saveButtons = document.querySelectorAll(".saveBtn");
-
+var saveButton = document.querySelectorAll(".saveBtn");
 
 //turns the timeBlocks in HTML into an array so that each timeBlock can be accessed independently  
 // or cycled through as an array. the '.desciption' class specifiaclly targets the textarea.   
@@ -36,21 +35,36 @@ for (var i = 0; i < timeBlockArray.length; i++) {
         timeBlockArray[i].classList.add("future");
     }
 
-    //saveButtons needs to be iterated over as there are multiple buttons ans the eventListener need to be added to each.
-    saveButtons[i].addEventListener("click", myfunction); 
-    function myfunction() {
     
     
-    
-        console.log("woo!");
-    };
-}
+    saveButton[i].addEventListener("click", function () {
 
+       // get text area values
+        var textEntered9 = $("#9").val();
+        console.log(textEntered9);
 
+        var textEntered10 = $("#10").val();
+        console.log(textEntered10);
+        var textEntered11 = $("#11").val();
+        console.log(textEntered11);
+        var textEntered12 = $("#12").val();
+        console.log(textEntered12);
+        var textEntered13 = $("#13").val();
+        console.log(textEntered13);
+        var textEntered14 = $("#14").val();
+        console.log(textEntered14);
+        var textEntered15 = $("#15").val();
+        console.log(textEntered15);
+        var textEntered16 = $("#16").val();
+        console.log(textEntered16);
 
+    //     // set text area values to local storage  
+       
+    //     console.log("Woo!");  
+    });
 
-    
-
+ 
+};
 
 
 // The app should:
@@ -68,11 +82,10 @@ for (var i = 0; i < timeBlockArray.length; i++) {
 // add an event listener that logs event to local Storage, e.g. .onclick localStorage
 
 // ** Persist events between refreshes of a page
-// call stored local sotrage info page start
+// call stored local storage info page start
 
 
 // spare code:
-
 
 //// Assign current time to a var, use jquery to select the id 'current time' give it text (e.g. the time)
 // function currentTime () {
@@ -88,4 +101,4 @@ for (var i = 0; i < timeBlockArray.length; i++) {
 //     $("#currentHour").hide();
 //     // return currentHour;
 //     }
-// currentHourValue(); 
+// currentHourValue()
