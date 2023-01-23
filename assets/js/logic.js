@@ -8,6 +8,9 @@ $("#currentDay").text(time.format("dddd, Do, MMMM"));
 var timeNow = parseInt(time.format("H"));
 console.log("The time is after: " + timeNow);
 
+var saveButtons = document.querySelectorAll(".saveBtn");
+
+
 //turns the timeBlocks in HTML into an array so that each timeBlock can be accessed independently  
 // or cycled through as an array. the '.desciption' class specifiaclly targets the textarea.   
 var timeBlockArray = Array.from($(".description"));
@@ -33,8 +36,20 @@ for (var i = 0; i < timeBlockArray.length; i++) {
         timeBlockArray[i].classList.add("future");
     }
 
+    //saveButtons needs to be iterated over as there are multiple buttons ans the eventListener need to be added to each.
+    saveButtons[i].addEventListener("click", myfunction); 
+    function myfunction() {
+    
+    
+    
+        console.log("woo!");
+    };
 }
 
+
+
+
+    
 
 
 
