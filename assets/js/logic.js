@@ -34,38 +34,39 @@ for (var i = 0; i < timeBlockArray.length; i++) {
     else if (timeBlockId > timeNow) {
         timeBlockArray[i].classList.add("future");
     }
-
-    
-    
-    saveButton[i].addEventListener("click", function () {
-
-       // get text area values
-        var textEntered9 = $("#9").val();
-        console.log(textEntered9);
-
-        var textEntered10 = $("#10").val();
-        console.log(textEntered10);
-        var textEntered11 = $("#11").val();
-        console.log(textEntered11);
-        var textEntered12 = $("#12").val();
-        console.log(textEntered12);
-        var textEntered13 = $("#13").val();
-        console.log(textEntered13);
-        var textEntered14 = $("#14").val();
-        console.log(textEntered14);
-        var textEntered15 = $("#15").val();
-        console.log(textEntered15);
-        var textEntered16 = $("#16").val();
-        console.log(textEntered16);
-
-    //     // set text area values to local storage  
-       
-    //     console.log("Woo!");  
-    });
-
  
 };
 
+// adds an event listener that runs on click
+$('.saveBtn').on('click', function () {
+  // get nearby values of the description in jQuery
+  var textEntered = $(this).siblings('.description').val();
+  // gets the id attribute (e.g. h9-h17) of the parent div, and stores it a var. 
+  // lcoal storage requires key/value pairs.  
+  var hourKey = $(this).parent().attr('id');
+  // saves the key and value in local storage. 
+  localStorage.setItem(hourKey, textEntered);
+
+  console.log(hourKey);
+  console.log(textEntered);
+});
+
+// recalls item from local storage  
+//Could tidy this up with a for loop? 
+function recalLocalStorage () {
+$('#h9  .description').val(localStorage.getItem('h9'));
+$('#h10 .description').val(localStorage.getItem('h10'));
+$('#h11 .description').val(localStorage.getItem('h11'));
+$('#h12 .description').val(localStorage.getItem('h12'));
+$('#h13 .description').val(localStorage.getItem('h13'));
+$('#h14 .description').val(localStorage.getItem('h14'));
+$('#h15 .description').val(localStorage.getItem('h15'));
+$('#h16 .description').val(localStorage.getItem('h16'));
+$('#h17 .description').val(localStorage.getItem('h17'));
+
+}; 
+
+recalLocalStorage(); 
 
 // The app should:
 
@@ -78,27 +79,9 @@ for (var i = 0; i < timeBlockArray.length; i++) {
  
 // ** Allow a user to enter an event when they click a timeblock DONE
 
-// ** Save the event in local storage when the save button is clicked in that timeblock.
+// ** Save the event in local storage when the save button is clicked in that timeblock. DONE
 // add an event listener that logs event to local Storage, e.g. .onclick localStorage
 
-// ** Persist events between refreshes of a page
+// ** Persist events between refreshes of a page DONE
 // call stored local storage info page start
 
-
-// spare code:
-
-//// Assign current time to a var, use jquery to select the id 'current time' give it text (e.g. the time)
-// function currentTime () {
-//     var currentTime = $("#currentTime").text(time.format("hh:mm:ss"));
-//     $("#currentTime").hide();  
-//     }
-// currentTime();
-
-////takes the current time variable and turns it into 24h hour only time
-// function currentHourValue() { 
-//     var currentHour = $("#currentHour").text(time.format("H")); 
-//     console.log(currentHour);
-//     $("#currentHour").hide();
-//     // return currentHour;
-//     }
-// currentHourValue()
