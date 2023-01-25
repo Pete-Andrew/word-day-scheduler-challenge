@@ -37,23 +37,31 @@ for (var i = 0; i < timeBlockArray.length; i++) {
  
 };
 
-// adds an event listener that runs on click
+    // adds an event listener that runs on click
+    //In an event (e.g event listener), 'this' refers to the element that received the event.
 $('.saveBtn').on('click', function () {
-  // get nearby values of the description in jQuery
+    // get sibling values of the description (sibling elements are elements that share the same parent.)
+    // syntax: $(selector).siblings(filter), filter specifies a selector expression to narrow down the search for sibling elements
+    // looks for the siblings of the save button (e.g in the same HTML hour div) 
+    // targets the class labelled '.description' and takes it's value using '.val()'
   var textEntered = $(this).siblings('.description').val();
-  // gets the id attribute (e.g. h9-h17) of the parent div, and stores it a var. 
-  // lcoal storage requires key/value pairs.  
+    // gets the id attribute (e.g. h9-h17) of the parent div, and stores it as a var. 
+    // syntax: $(selector).attr(attribute), attr() method sets or returns attributes and values of the selected elements.
+    // local storage requires key/value pairs.  
   var hourKey = $(this).parent().attr('id');
-  // saves the key and value in local storage. 
+    // saves the key and value in local storage. 
   localStorage.setItem(hourKey, textEntered);
 
-  console.log(hourKey);
   console.log(textEntered);
+  console.log(hourKey);
+  
 });
 
 // recalls item from local storage  
 //Could tidy this up with a for loop? 
 function recalLocalStorage () {
+    
+
 $('#h9  .description').val(localStorage.getItem('h9'));
 $('#h10 .description').val(localStorage.getItem('h10'));
 $('#h11 .description').val(localStorage.getItem('h11'));
@@ -63,10 +71,13 @@ $('#h14 .description').val(localStorage.getItem('h14'));
 $('#h15 .description').val(localStorage.getItem('h15'));
 $('#h16 .description').val(localStorage.getItem('h16'));
 $('#h17 .description').val(localStorage.getItem('h17'));
+    
 
 }; 
 
 recalLocalStorage(); 
+
+
 
 // The app should:
 
