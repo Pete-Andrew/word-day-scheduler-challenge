@@ -1,5 +1,7 @@
 Word day Scheduler Challenge
 
+See it here: https://pete-andrew.github.io/work-day-scheduler-challenge/
+
 ## Description
 
 The aim of this project was to make a single page workday scheduler that was colour coded according to 
